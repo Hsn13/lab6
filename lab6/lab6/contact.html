@@ -1,0 +1,158 @@
+<head>
+    <script type="text/javascript">
+       function checkData() {
+        var nameCheckbox = document.getElementById('nameCheckbox');
+        var emailCheckbox = document.getElementById('emailCheckbox');
+        var subjectCheckbox = document.getElementById('subjectCheckbox');
+        var messageCheckbox = document.getElementById('messageCheckbox');
+
+        var nameField = document.getElementById('name1');
+        var emailField = document.getElementById('name2');
+        var subjectField = document.getElementById('name3');
+        var messageField = document.getElementById('name4');
+
+        if (nameField.value === "") {
+            alert("Please enter your Name!");
+            nameField.focus();
+        } else if (emailField.value === "") {
+            alert("Please enter your Email!");
+            emailField.focus();
+        } else if (subjectField.value === "") {
+            alert("Please enter the Subject!");
+            subjectField.focus();
+        } else if (messageField.value === "") {
+            alert("Please enter your Message!");
+            messageField.focus();
+        } else {
+            // Save data to localStorage
+            localStorage.setItem("Name", nameField.value);
+            localStorage.setItem("Email", emailField.value);
+            localStorage.setItem("Subject", subjectField.value);
+            localStorage.setItem("Message", messageField.value);
+
+            // Display success message
+            alert("Data has been saved successfully!");
+
+            // Clear input fields
+            clearInputFields();
+        }
+    }
+
+    function retrieveData() {
+        var nameField = document.getElementById('name1');
+        var emailField = document.getElementById('name2');
+        var subjectField = document.getElementById('name3');
+        var messageField = document.getElementById('name4');
+
+        // Retrieve data from localStorage
+        var savedName = localStorage.getItem("Name");
+        var savedEmail = localStorage.getItem("Email");
+        var savedSubject = localStorage.getItem("Subject");
+        var savedMessage = localStorage.getItem("Message");
+
+        if (savedName || savedEmail || savedSubject || savedMessage) {
+            // Populate fields with retrieved data
+            nameField.value = savedName || "";
+            emailField.value = savedEmail || "";
+            subjectField.value = savedSubject || "";
+            messageField.value = savedMessage || "";
+        } else {
+            alert("No saved data found.");
+        }
+    }
+
+    function clearInputFields() {
+        document.getElementById('name1').value = "";
+        document.getElementById('name2').value = "";
+        document.getElementById('name3').value = "";
+        document.getElementById('name4').value = "";
+    }
+    </script>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+    
+    <div id="tooplate_wrapper">
+        <div id="tooplate_header">
+        
+            <div id="site_title"><h1>Hosting Central</h1></div>
+            <div id="header_right">
+            
+                <div id="header_contactus">
+                    Toll Free: <span> 1 800 203 2891</span><br />
+                    Local Free: <span> 1 800 624 4125</span><br />
+                </div>
+                
+                <div id="tooplate_menu">
+                    <ul>
+                        <li><a href="index.html" class="current">Home</a></li>
+                        <li><a href="webhosting.html">Web Hosting</a></li>
+                        <li><a href="vps.html">VPS Hosting</a></li>
+                        <li><a href="dedicatedservers.html">Dedicated Servers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>    	
+                </div> 
+                
+            </div>
+        </div>
+        
+        <div id="tooplate_middle"><span class="middle_icon"></span>
+            <em>The Cheapest and The Best Hosting</em>
+            <h1>Unlimited Web Hosting</h1>        
+            <p>Hosting is what makes your site visible on the web. We offer fast, reliable plans for every need 
+    - from a basic blog to a high-powered site.</p>
+            <div class="cleaner"></div>
+            <a class="more float_l" href="#">Sign Up</a>
+            <div class="cleaner"></div>
+        </div> 
+        
+        <div id="tooplate_main">
+        
+            <div class="left">
+            <h2>Contact Details</h2>
+            <h3>Postal Mail</h3><ul>
+                <li>160-180 Web Flower Tower, San Diego, CA 10680 USA</li>
+            </ul>
+            <h3>Our Emails</h3>
+            <ul>
+                <li>Sales - sales@hosting.com</li>
+                <li>Support - support@hosting.com</li>
+            </ul>
+            <h3>Telephone</h3>
+            <ul>
+                <li>070-020-7450</li>
+                <li>070-010-8300</li>
+            </ul>
+            </div>
+            <div class="right">
+                <h2>Contact Form</h2>
+    <label for="name1">Name: </label>
+    <input type="text" id="name1" required><br />
+    <label for="name2">Email: </label>
+    <input type="text" id="name2" required><br />
+    <label for="name3">Subject: </label>
+    <input type="text" id="name3" required><br />
+    <label for="name4">Message: </label>
+    <input type="text" id="name4" required><br />
+    <input type="button" value="Submit" id="name5" onclick="checkData()">
+    <input type="button" value="Retrieve Last Message" id="name6" onclick="retrieveData()">
+            
+            </div>
+            <div class="text">
+                <p>About us: bjkfvbkjsfvjkbsfjkvbjkfsbjksfbjbvdkjsdbvjksfjkvbjksfjkbvsjkfbjkbfjkjkvbsjfbjksbjksjkbjsbfkjbkjsfjjbjkbkdjbkjdfbkjdbjbfjdjkbkjbjjdffbjdbkjbjkjkbjfbkjfbjfbjnfjrebjbrfvjrebvrerjbvrjv</p>
+            </div>
+            </div>
+            
+            <div id="tooplate_footer">
+        
+                <a href="#">Home</a> | <a href="#">Hosting Features</a> | <a href="#">Contact</a> | <a href="#">About Us</a> | <a href="#">Affiliates</a> | <a href="#">Terms</a>
+                
+            </div>
+            </div>
+        </div> 
+        
+       
+        
+        
+    </body>
+    </html>
